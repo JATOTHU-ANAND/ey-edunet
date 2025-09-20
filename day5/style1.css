@@ -1,0 +1,12 @@
+.relative{
+    /* position: relative; */
+    width: 2000px;
+    height: 20px;
+    background-color: lightblue;
+    border: 2px solid blue;
+    /* margin: 20px; */
+    top: 10px;
+    left: 10px;
+    position: absolute;
+    position: sticky;
+}

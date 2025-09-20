@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Variable</title>
+    <style>
+        :root{
+            --aq:rgb(63, 233, 105);
+            --wh:rgb(62, 103, 205);
+        }
+        body{
+            background-color: var(--aq);
+        }
+        h2{
+            border-bottom: 2px solid  var(--aq);
+        }
+        .container{
+            color:  var(--aq);
+            background-color: var(--wh);
+            padding: 15px;
+        }
+        button{
+            background-color: var(--wh);
+            color: var(--aq);
+            border: 1px solid  var(--aq);
+            padding: 5px;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>The Traitional way</h1>
+    <div class="container">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam
+        perferendis perspiciatis a non, quidem distinctio magni corporis quia
+        laborum numquam ipsam debitis id blanditiis quas eius ullam voluptatem
+        saepe nisi.
+      </p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor et nobis minima reiciendis vitae minus asperiores commodi, necessitatibus velit totam mollitia! Porro sit labore dolores, animi quos adipisci nostrum illo!
+        <p>
+            <button>Yes</button>
+            <button>No</button>
+        </p>
+      </p>
+    </div>
+  </body>
+</html>
