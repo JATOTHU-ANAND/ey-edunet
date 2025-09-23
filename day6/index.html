@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Java Script</title>
+  </head>
+  <body>
+    <h1>Java Script</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+      aperiam dolorum mollitia cum optio, sunt obcaecati omnis iusto vitae. Id
+      nisi repudiandae quibusdam consectetur quis perferendis doloremque dolore
+      praesentium corrupti!
+    </p>
+    <script>
+        // var X=10;
+        // console.log("this is the value :",X);
+        // var X=10;
+        // console.log("hello world ::",b);
+        // var b=20;
+        // console.log("hello world ::",x);
+        // let x=10;
+        // let y=20;
+        // console.log("the value of x and y is :",x);
+        // const pi=3.14;
+        // a=pi+10;
+        // console.log("the value of pi is :",pi);
+        // console.log("the value of a is :",a);
+
+        // let a=10;
+        // let b="20";
+        // let b=20.5;
+        // c=a+b;
+        // console.log("the Addition is ",c);
+
+        // let a=10;
+        // var b="20";
+        // let c=a+b;
+        // console.log(a+b);
+        // console.log("the Addition is ",c,"Data type");
+        // console.log("the type of a is :",typeof b);
+
+        var a=10;
+        var b=20;
+        console.log("Arithmatic operator");
+        console.log("this is addition of two no",a+b);
+        console.log("this is substraction of two no:",a-b);
+        console.log("this is multiplication of two no:",a*b);
+        console.log("this is division of two no:",a/b); 
+        console.log("this is modulus of two no:",a%b);
+        console.log("\n");
+        console.log("Assingnment operator");
+        var n=10;
+        console.log("= it is used for assigns a value to a varible","output:",n,"example n=10");
+        console.log("+= it is used for adds and assigns a value to a varible","output:",n+=5,"example n=10,n+=5");
+        console.log("-= it is used for subtracts and assigns a value to a varible","output:",n-=5,"example n=10,n-=5");
+        console.log("*= it is used for multiplies and assigns a value to a varible","output:",n*=5,"example n=10,n*=5");
+        console.log("/= it is used for divides and assigns a value to a varible","output:",n/=5,"example n=10,n/=5"); 
+        console.log("\n");
+        var a=10;
+        console.log("checking between 10 to 20");
+        if (a>=10 && a<=20) {
+            console.log("it is between 10 to 20");
+        }
+        else{
+            console.log("it is not between 10 to 20");
+        }
+        console.log("\n");
+        console.log("check if the character is not a vowel");
+        var char='e';
+        if (char!='a' && char!='e' && char!='i' && char !='o' && char!='u') {
+            console.log("it is not a vowel");
+        }
+        else{
+            console.log("it is a vowel");
+        }
+        console.log("\n");
+        console.log("give age, print teen or adult:");
+        var age=60;
+        if (age>=13 && age<=19) {
+            console.log("teen");
+        }
+        else if(age<13){
+            console.log("child");
+            
+        }
+            
+        else{
+            console.log("adult");
+        }
+        console.log("\n");
+        console.log("checking email and password");
+        let email="anand@gmail.com";
+        let password="Anand@123";
+        // if (email==="anand@gmail.com" && password==="Anand@123") {
+        //     console.log("login successful");
+        // }
+        // else{
+        //     console.log("login failed given credentials are right");
+        // }
+        if (email==="anand@gmail.com"){
+            // console.log("email is correct");
+            if (password==="Anand@123") {
+                console.log("email and password is correct");
+            }
+            else{
+                console.log("password is not correct");
+        }}
+        else{
+            console.log("email is not correct");
+        }
+        console.log("\n");
+        console.log("day of the week using switch case");
+        var day=5;
+        switch (day) { 
+            case 0:
+                console.log("monday");
+                break;
+            case 1:
+                console.log("tuesday");
+                break;
+            case 2:
+                console.log("wednesday");
+                break;
+            case 3:
+                console.log("thursday");
+                break;
+            case 4:
+                console.log("friday");
+                break;
+            case 5:
+                console.log("saturday");
+                break;
+            case 6:
+                console.log("sunday");
+                break;        
+            default:
+                console.log("invalid day"); 
+                break;
+        } 
+
+        console.log("\n");
+        
+    </script>
+    <script>
+        console.log("print 1 to 10 using for loop");
+        for (let i = 1; i <= 10; i++) {
+            console.log("iteration no:"+i);
+        }
+        let x=10;
+        for(let j=1;j<=10;j++){
+            console.log("iteration no ",x," x ",j,"=",+x*j);
+        }
+        var z; 
+
+        for(z=1; z<=50; z++){
+        if (z%2==0){
+            console.log("the even numbers are ",z);
+            
+        } }
+        var l=1;
+        while (l<=50){
+            console.log("iteration no:",+l);
+            l+=2;
+        }
+        console.log("\n"); 
+        console.log("sum of the no from 1 to 10");
+
+        
+        var n=0;
+        var m=0;
+        while (n<=10){
+            m+=n;//sum = sum+n
+            n++;
+        }
+        console.log("sum is",m);
+
+        console.log("\n");
+        console.log("print no in reverse from 10 to 1");
+        for (var p=1;p<=10;p++){
+            console.log(10-p+1);
+        }
+
+        console.log("using while loop");
+        let i=10;
+        while (i>=1){
+            console.log(i);
+            i--;
+        }
+        console.log("\n");
+        console.log("print square of no from 1 to 10");
+        for (var q=1;q<=10;q++){
+            console.log("the square of ",q,"is",q*q);
+        }
+        console.log("\n");
+        console.log("print factorial of a no");
+        
+
+
+
+
+    </script>
+  </body>
+</html>

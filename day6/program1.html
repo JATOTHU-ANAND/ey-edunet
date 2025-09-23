@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("Object: it stores multiple values in a single variable");
+    let std={
+        name:"Edunet",
+        age:12,
+        email:"anand@gmail.com",
+    }
+    console.log("elements of object std");
+    console.log(std.age);
+    console.log(std.name);
+    std.age=15;
+    console.log(std.age)
+    std.phone=9876543210;
+    console.log(std.phone);
+    console.log("\n");
+    console.log("arrays basic operations push and pop:");
+    let subjects=["math","Physics","chemistry"];
+    console.log("before adding:",subjects);
+    subjects.push("english");
+    console.log("after adding:",subjects);
+    let lastSubject=subjects.pop();
+    console.log("after removing:",subjects);
+
+ console.log("Function addition");
+    function addition(a,b){
+        console.log("the addition of two no is :"+(a+b));
+        
+    }
+    addition(10,20);
+    function substraction(a,b){
+        console.log("the substraction of two no is :"+(a-b));
+    }
+    function multiple(a,b){
+        console.log("the multiple of two no is :"+(a*b));
+    }
+    function division(a,b){
+        console.log("the division of two no is :"+(a/b));
+    }
+    substraction(20,10);
+    multiple(10,20);
+    division(20,10);
+    console.log("\n");
+
+    function calculator(num1,num2,operator){
+        switch(operator){
+            case '+':
+                console.log("the addition of two no is :"+(num1+num2));
+                break;
+            case '-':
+                console.log("the substraction of two no is :"+(num1-num2));
+                break;
+            case '*':
+                console.log("the multiple of two no is :"+(num1*num2));
+                break;
+            case '/':
+                console.log("the division of two no is :"+(num1/num2));
+                break;
+            default:
+                console.log("invalid operator");
+                break;
+        }
+    }
+    calculator(10,20,'*');
+
+    console.log("\n");
+    //console.log("works because of hosting");
+    //sayHi("Hi!");
+    //console.log("doesn't work because it's a function expression");
+    //sayHi();
+    //console.log(\n)
+    console.log("arrow function");
+
+    const sayHi=()=>{
+        console.log("thi is from arrow fuunction");
+    }
+    
+
+
+
+ 
+
+</script>
+</body>
+</html>
