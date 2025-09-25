@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Practice Problems</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        line-height: 1.6;
+        background-color: #f0f2f5;
+        color: #333;
+      }
+      h1 {
+        text-align: center;
+        color: #4a3aff;
+      }
+      h2 {
+        margin-top: 0;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 5px;
+      }
+      .box {
+        border: 1px solid #ddd;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        background: #ffffff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      button {
+        background: #4a3aff;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        margin-top: 8px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.2s;
+      }
+      button:hover {
+        background: #3729c5;
+      }
+      input {
+        padding: 8px;
+        margin: 4px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 150px;
+      }
+      p, div {
+        margin-top: 10px;
+      }
+      #counter {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin: 0 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1></h1>
+
+    <div class="box">
+      <h2>1. Addition of 2 Numbers</h2>
+      <p>Problem: Enter two numbers and find their sum.</p>
+      <input type="text" id="fnum" placeholder="First Number" />
+      <input type="text" id="snum" placeholder="Second Number" />
+      <button onclick="add()">Add</button>
+      <p id="result"></p>
+    </div>
+
+    <div class="box">
+      <h2>2. Check Even or Odd</h2>
+      <p>Problem: Enter a number and check whether it is even or odd.</p>
+      <input type="number" id="evenOddNum" placeholder="Enter a number" />
+      <button onclick="checkEvenOdd()">Check</button>
+      <p id="evenOddResult"></p>
+    </div>
+
+    <div class="box">
+      <h2>3. Reverse a String</h2>
+      <p>Problem: Enter a word and display its reverse.</p>
+      <input type="text" id="strInput" placeholder="Enter a word" />
+      <button onclick="reverseString()">Reverse</button>
+      <p id="reverseResult"></p>
+    </div>
+
+    <div class="box">
+      <h2>4. Multiplication Table</h2>
+      <p>Problem: Enter a number and generate its multiplication table (1 - 10).</p>
+      <input type="number" id="mulNum" placeholder="Enter a number" />
+      <button onclick="generateTable()">Generate Table</button>
+      <div id="tableResult"></div>
+    </div>
+
+    <div class="box">
+      <h2>5. Simple Counter</h2>
+      <p>Problem: Create a counter that increases and decreases on button clicks.</p>
+      <button onclick="decrease()">-</button>
+      <span id="counter">0</span>
+      <button onclick="increase()">+</button>
+    </div>
+
+    <script>
+      // 1. Add two numbers
+      function add() {
+        const a = parseInt(document.getElementById("fnum").value);
+        const b = parseInt(document.getElementById("snum").value);
+        
+        if (isNaN(a) || isNaN(b)) {
+            document.getElementById("result").innerText = "Please enter valid numbers!";
+        } else {
+            const c = a + b;
+            document.getElementById("result").innerText = "The sum is: " + c;
+        }
+      }
+
+      // 2. Check if a number is even or odd
+      function checkEvenOdd() {
+        const num = parseInt(document.getElementById("evenOddNum").value);
+        if (isNaN(num)) {
+          document.getElementById("evenOddResult").innerText = "Please enter a valid number!";
+          return;
+        }
+        document.getElementById("evenOddResult").innerText = (num % 2 === 0) ? "The number is Even." : "The number is Odd.";
+      }
+
+      // 3. Reverse a string
+      function reverseString() {
+        const str = document.getElementById("strInput").value;
+        const reversed = str.split("").reverse().join("");
+        document.getElementById("reverseResult").innerText = "Reversed: " + reversed;
+      }
+
+      // 4. Generate a multiplication table
+      function generateTable() {
+        const num = parseInt(document.getElementById("mulNum").value);
+        let result = "";
+        
+        if (!isNaN(num)) {
+          for (let i = 1; i <= 10; i++) {
+            // CORRECTED: Used backticks (`) for template literal
+            result += `${num} x ${i} = ${num * i}<br>`;
+          }
+        } else {
+          result = "Please enter a valid number!";
+        }
+        document.getElementById("tableResult").innerHTML = result;
+      }
+
+      // 5. Counter
+      let count = 0;
+      function increase() {
+        count++;
+        document.getElementById("counter").innerText = count;
+      }
+      
+      function decrease() {
+        count--;
+        document.getElementById("counter").innerText = count;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food recipe Finder</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: rgb(34, 227, 234);
+        margin: 20px;
+      }
+      h1 {
+        text-align: center;
+        color: rgb(23, 42, 215);
+        margin-bottom: 20px;
+        border-color: black;
+        
+      }
+      #search-box {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+      }
+      input {
+        padding: 10px;
+        width: 250px;
+        border: 1px solid #ccc;
+        border-radius: 8px 8px 8px 8px;
+        /* outline: none; */
+        outline-color: blue;
+      }
+      
+      button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px 8px 8px 8px;
+        background: blue;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      button:hover {
+        background: rgb(249, 5, 204);
+      }
+      #recipes {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+      }
+      .card{
+        background: #fff;
+        padding: 15px;
+        box-shadow: 0 4px 10px rgb(76, 10, 181);
+        text-align: center;
+        transition: transform 0.2s;
+
+      }
+      .card:hover{
+        transform: scale(1.05);
+      }
+      .card a{
+        display: inline-block;
+        text-decoration: none;
+        padding: 8px 12px;
+        color: white;
+        background-color: rgb(38, 21, 224);
+
+      }
+      .card a:hover{
+        background: darkblue;
+      }
+      .media-container {
+      position: relative;
+      width: 100%;
+      height: 180px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .media-container img,
+    .media-container iframe {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: none;
+      border-radius: 8px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+    .media-container iframe {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .media-container:hover iframe {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .media-container:hover img {
+      opacity: 0;
+    }ttrrrrrrrrrrrrrr
+    </style>
+  </head>
+  <body>
+    <h1>Food Recipe Finder</h1>
+    <div id="search-box">
+      <input
+        type="text"
+        id="search"
+        placeholder="search for a meal (eg, chicken)"
+      />
+      <button onclick="searchMeal()">Search</button>
+    </div>
+    <div id="recipes"></div>
+    <script>
+      function searchMeal() {
+        let query = document.getElementById("search").value.trim();
+        // console.log(query);
+        if (!query) {
+          document.getElementById("recipes").innerHTML =
+            "<p>Please enter a food name.</p>";
+          return;
+        }
+        fetch('https://www.themealdb.com/api/json/v1/1/search.php?s='+query)
+        .then(response=>response.json())
+        .then(data=>{
+          let container=document.getElementById('recipes');
+          container.innerHTML="";
+          if(!data.meals){
+            container.innerHTML="<p>No recipes found.</p>";
+            return;
+          }
+          data.meals.forEach(meal=>{
+                    let card=document.createElement('div');
+                    card.className='card';
+                    card.innerHTML=`
+                        <img src="${meal.strMealThumb}" alt="${meal.strMeal}" style="width:100%; border-radius: 8px;">
+                        <h3>${meal.strMeal}</h3>
+                        <p><strong>Category:</strong> ${meal.strCategory}</p>
+                        <p><strong>Area:</strong> ${meal.strArea}</p>
+                        <a href="${meal.strYoutube}" target="_blank">Watch Recipe</a>
+                    `;
+                    container.appendChild(card);
+                })
+            })
+            .catch(error => {
+              document.getElementById("recipes").innerHTML="<p>Error fetching recipes.</p>";
+          console.error(error);
+            })
+        }
+
+    </script>
+  </body>
+</html>

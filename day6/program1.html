@@ -72,21 +72,27 @@
     calculator(10,20,'*');
 
     console.log("\n");
+    console.log("function expression");
+    const sayHi=function(message){
+        console.log(message);
+    }
     //console.log("works because of hosting");
     //sayHi("Hi!");
     //console.log("doesn't work because it's a function expression");
     //sayHi();
     //console.log(\n)
+    
     console.log("arrow function");
 
-    const sayHi=()=>{
-        console.log("thi is from arrow fuunction");
+    // const sayHi=()=>{
+    //     console.log("thi is from arrow fuunction");
+    // }
+    const add1=(a,b)=>{
+        return a+b;
     }
     
+    console.log("the addition of two no is :"+add1(10,20));
 
-
-
- 
 
 </script>
 </body>
